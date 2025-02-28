@@ -24,8 +24,8 @@ All items are color co-ordinated, making it easy to tell what rarity it is!
 Enable a setting to allow auto scanning, This setting will scan your MM2 inventory and automatically add the items into the tracker for you.
 Dont worry this isnt needed, its just for the ease of it.
 There are 2 options you can take with this; 
-RealTime - You enable auto scan and open your Inventory on MM2, it will monitor your screen and with image recognition, add the items to the collection
-ScreenShots - You can take screenshots of your inventory and input them into the auto scan, this will do the same as option 1 and add the items to the collection
+RealTime - You enable auto scan and open your Inventory on MM2, it will monitor your screen and with image recognition, add the items to the collection - Alternatively you can use
+ScreenShots - Take screenshots of your inventory and input them into the auto scan, this will do the same as option 1 and add the items to the collection
 
 
 
