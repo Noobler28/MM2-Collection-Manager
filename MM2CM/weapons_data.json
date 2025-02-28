@@ -231,6 +231,47 @@
                     "Tree": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
                     "Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"}
                 }
+            },
+
+            "Christmas Event 2016": {
+                "knife": {
+                    "Ice Dragon": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"}
+                }
+            },
+            
+            "Christmas Event 2017": {
+                "knife": {
+                    "Frostsaber": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Snowflake": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+
+                    "Present": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Coal": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Elf": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Santa": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Frosty": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Sweater": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Tree": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Gingerbread": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Snowy": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Green Fire": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Winter's Edge": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+
+                    "Blue Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Unique"},
+                    "Bronze Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Unique"},
+                    "Silver Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Unique"},
+                    "Gold Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Unique"},
+
+                    "Ice Shard": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"}
+                }
+            },
+
+            "Christmas Event 2018": {
+                "knife": {
+
+                },
+                "gun": {
+                    
+                }
             }
         }
 
