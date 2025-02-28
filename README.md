@@ -2,8 +2,7 @@ Hey im connor a small developer who plays roblox. Specifically MM2.
 As a collector i always struggled to keep track of what i have, need, how many i have, without a reliable way to check.
 Thats why i created this small project, for me and other collectors alike.
 
-~~ Collection Manager Tab ~~
-# Display
+# Collection
 The items are displayed as followed:
 | Weapon Name | COLL/UNCOL | Count | Rarity | Estimated Value |
 
@@ -26,8 +25,7 @@ There are 2 options you can take with this;
 RealTime - You enable auto scan and open your Inventory on MM2, it will monitor your screen and with image recognition, add the items to the collection
 ScreenShots - You can take screenshots of your inventory and input them into the auto scan, this will do the same as option 1 and add the items to the collection
 
-~~ Trading Tracker Tab ~~
-Easily track your trades and the weapon value, to see if it is W/L/F
+
 
 # Tracker
 Input the items you gave and recieved into the respective boxes and click the button to add the trade to the tracker
@@ -40,7 +38,7 @@ You can input the information yourself, like any notes about the trade, the othe
 # Auto Scanning
 Just like with the collection manager you can automatically scan your trades into the trading tracker.
 
-~~ Settings Tab ~~
+# Settings
 Nothing special, Just a settings tab
 
 # Visual Settings
