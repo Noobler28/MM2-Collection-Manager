@@ -1,176 +1,237 @@
 {
     "weapons": {
-        "boxes": {
+        "Boxes": {
             "Mystery Box 1": {
-                "Combat": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Copper": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Hardened": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Splat": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Camo": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Tiger": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Pirate": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Space": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Rainbow": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Rune": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Gemstone": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Gemstone": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Combat": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Copper": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Hardened": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Camo": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Tiger": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Space": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Rune": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Gemstone": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Gemstone": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                },
+
+                "gun": {
+                    "Splat": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Pirate": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Rainbow": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"}
+                }
             },
 
             "Mystery Box 2": {
-                "Clown": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Shaded": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Lovely": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Leaf": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Biogun": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Graffiti": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "High Tech": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Nightfire": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Deep Sea": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Splash": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Lightbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Darkbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Lightbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"},
-                "Chroma Darkbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Shaded": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Lovely": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Leaf": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Graffiti": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "High Tech": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Deep Sea": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"}
+                },
+                
+                "gun": {
+                    "Clown": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Biogun": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Nightfire": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Splash": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Lightbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Darkbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Lightbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"},
+                    "Chroma Darkbringer": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             }, 
 
             "Knife Box 1": {
-                "Whiteout": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Splatter": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Ice": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Love": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Bluesteel": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Adurite": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Wanwood": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Rainbow": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Galaxy": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Plasmite": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Deathshard": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Deathshard": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Whiteout": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Splatter": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Ice": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Love": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Bluesteel": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Adurite": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Wanwood": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Rainbow": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Galaxy": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Plasmite": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Deathshard": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Deathshard": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Knife Box 2": {
-                "Linked": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Slate": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Borders": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "8bit": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Stalker": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Missing": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Cheesy": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Krypto": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Spectrum": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Overseer": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Fang": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Fang": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Linked": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Slate": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Borders": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "8bit": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Stalker": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Missing": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Cheesy": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Krypto": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Spectrum": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Overseer": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Fang": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Fang": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Knife Box 3": {
-                "Clan": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Cherry": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Cardboard": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Stainless": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Circuit": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Doge": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Paper": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Nova": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Vortex": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Splash": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Saw": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Saw": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Clan": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Cherry": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Cardboard": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Stainless": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Circuit": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Doge": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Paper": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Nova": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Vortex": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Splash": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Saw": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Saw": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Knife Box 4": {
-                "Bleached": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Clown": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Aqua": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Oily": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Hazmat": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Melon": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Hive": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Korblox": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Squire": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Fade": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Slasher": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Slasher": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Bleached": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Clown": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Aqua": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Oily": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Hazmat": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Melon": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Hive": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Korblox": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Squire": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Fade": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Slasher": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Slasher": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Knife Box 5": {
-                "Eco": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Log": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Sandy": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Static": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Brush": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Jigsaw": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Lucky": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Abstract": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Musical": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Fusion": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Tides": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Tides": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Eco": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Log": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Sandy": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Static": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Brush": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Jigsaw": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Lucky": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Abstract": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Musical": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Fusion": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Tides": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Tides": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Rainbow Box": {
-                "Brown": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Orange": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Yellow": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Green": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Pink": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Blue": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Red": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Black": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Purple": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Shiny": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Heat": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Heat": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "knife": {
+                    "Brown": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Orange": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Yellow": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Green": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Pink": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Blue": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Red": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Black": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Purple": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Shiny": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Heat": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Heat": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Gun Box 1": {
-                "Iron": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Fallout": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Cold": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Big Kill": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Bluesteel": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Adurite": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Camo": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Imbued": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Galactic": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Viper": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Luger": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Luger": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "gun": {
+                    "Iron": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Fallout": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Cold": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Big Kill": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Bluesteel": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Adurite": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Camo": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Imbued": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Galactic": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Viper": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Luger": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Luger": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Gun Box 2": {
-                "Engraved": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Infiltrator": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Juice": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Star": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Sketch": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Marina": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Cheddar": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "iRevolver": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Hacker": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Predator": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Shark": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Shark": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "gun": {
+                    "Engraved": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Infiltrator": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Juice": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Star": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Sketch": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Marina": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Cheddar": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "iRevolver": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Hacker": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Predator": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Shark": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Shark": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             },
 
             "Gun Box 3": {
-                "Bit": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Pea": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "News": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "HL2": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
-                "Caution": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Soda": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Wooden": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
-                "Ace": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Bacon": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
-                "Universe": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
-                "Laser": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
-                "Chroma Laser": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                "gun": {
+                    "Bit": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Pea": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "News": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "HL2": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Caution": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Soda": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Wooden": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Ace": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Bacon": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Universe": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Laser": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Chroma Laser": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+                }
             }
         },
 
-        "event": {
-            
+        "Events": {
+            "Christmas Event 2015": {
+                "knife": {
+                    "Chill": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Handsaw": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Xmas": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Santa": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Elf": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Ornament1": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Ornament2": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Snowy": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Snowman": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Wrapped": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Ginger": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Cane": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Tree": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"}
+                },
+                
+                "gun": {
+                    "Red Luger": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Green Luger": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                    "Santa": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Elf": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Ornament1": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Ornament2": {"Status": "Not Collected", "Count": 0, "Rarity": "Common"},
+                    "Snowy": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Snowman": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Wrapped": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                    "Ginger": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Cane": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                    "Tree": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                    "Candy": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"}
+                }
+            }
         }
 
     }
