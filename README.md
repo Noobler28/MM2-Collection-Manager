@@ -48,7 +48,7 @@ NOT FINISHED
 ### Customisation Settings
 NOT FINISHED
 ### General Settings
-Auto Scanning (Collection) - RealTime / ScreenShots
+Auto Scanning (Collection) - RealTime / ScreenShots | 
 Auto Scanning (Trading) - RealTime / ScreenShots
 
 # Outro
