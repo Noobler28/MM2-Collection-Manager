@@ -3,6 +3,7 @@
 Hey im connor a small developer who plays roblox. Specifically MM2.
 As a collector i always struggled to keep track of what i have, need, how many i have, without a reliable way to check.
 Thats why i created this small project, for me and other collectors alike.
+Thanks to my friend isaac for helping!
 
 # Collection
 The items are displayed as followed:
