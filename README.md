@@ -6,7 +6,6 @@ Thats why i created this small project, for me and other collectors alike.
 # Display
 The items are displayed as followed:
 | Weapon Name | COLL/UNCOL | Count | Rarity | Estimated Value |
-|     Leaf    | Collected  |   8   | Common |  x1 T1 Common   |
 
 # Catagories, Subcatagories and the Search bar
 The weapons are split into catagories and subcatagories, for example; MysteryBoxes / MysteryBox1 | Events / Halloween2013 | Godlies / Chromas.
