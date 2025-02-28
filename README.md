@@ -6,7 +6,7 @@ Thats why i created this small project, for me and other collectors alike.
 The items are displayed as followed:
 | Weapon Name | COLL/UNCOL | Count | Rarity | Estimated Value |
 
-## Catagories, Subcatagories and the Search bar 
+### Catagories, Subcatagories and the Search bar 
 The weapons are split into catagories and subcatagories, for example; MysteryBoxes / MysteryBox1 | Events / Halloween2013 | Godlies / Chromas.
 You can open the catagories and subcatagories yourself using the dropdowns, if you know where an item will be located.
 However, if you dont know where an item is, you can always use the search bar. Search for a term using the search, for example; Candy.
