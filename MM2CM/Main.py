@@ -112,12 +112,47 @@ class MM2CollectionManager:
         self.subcategory_dropdown.grid(row=0, column=3, padx=5, pady=5, sticky="w")
         self.subcategory_dropdown.bind("<<ComboboxSelected>>", self.update_treeview)
 
-        # Search bar
-        ttk.Label(control_frame, text="Search:").grid(row=0, column=4, padx=5, pady=5, sticky="w")
+        # Search bar with dropdown for filters
+        search_frame = ttk.Frame(control_frame)
+        search_frame.grid(row=0, column=4, padx=5, pady=5, sticky="w")
+
         self.search_var = tk.StringVar()
-        self.search_entry = ttk.Entry(control_frame, textvariable=self.search_var)
-        self.search_entry.grid(row=0, column=5, padx=5, pady=5, sticky="w")
+        self.search_entry = ttk.Entry(search_frame, textvariable=self.search_var)
+        self.search_entry.pack(side="left", fill="x", expand=True)
+        self.search_entry.bind("<KeyRelease>", self.update_search_recommendations)
         self.search_entry.bind("<Return>", self.search_weapons)
+
+        self.filter_button = ttk.Button(search_frame, text="Search Filters", command=self.toggle_filters)
+        self.filter_button.pack(side="right")
+
+        self.filter_frame = ttk.Frame(control_frame)
+        self.filter_frame.grid(row=1, column=4, padx=5, pady=5, sticky="w")
+        self.filter_frame.grid_remove()
+
+        # Filters
+        ttk.Label(self.filter_frame, text="Rarity:").grid(row=0, column=0, padx=5, pady=5, sticky="w")
+        self.rarity_vars = {rarity: tk.BooleanVar() for rarity in RARITY_COLOURS.keys()}
+        for i, (rarity, color) in enumerate(RARITY_COLOURS.items()):
+            checkbutton = ttk.Checkbutton(self.filter_frame, text=rarity, variable=self.rarity_vars[rarity])
+            checkbutton.grid(row=i+1, column=0, sticky="w")
+            checkbutton.configure(style=f"{rarity}.TCheckbutton")
+            self.style.configure(f"{rarity}.TCheckbutton", foreground=color)
+
+        ttk.Label(self.filter_frame, text="Type:").grid(row=0, column=1, padx=5, pady=5, sticky="w")
+        self.type_vars = {"Gun": tk.BooleanVar(), "Knife": tk.BooleanVar()}
+        for i, weapon_type in enumerate(self.type_vars.keys()):
+            ttk.Checkbutton(self.filter_frame, text=weapon_type, variable=self.type_vars[weapon_type]).grid(row=i+1, column=1, sticky="w")
+
+        ttk.Label(self.filter_frame, text="Status:").grid(row=0, column=2, padx=5, pady=5, sticky="w")
+        self.status_vars = {"Collected": tk.BooleanVar(), "Not Collected": tk.BooleanVar()}
+        for i, status in enumerate(self.status_vars.keys()):
+            ttk.Checkbutton(self.filter_frame, text=status, variable=self.status_vars[status]).grid(row=i+1, column=2, sticky="w")
+
+        # Search recommendations listbox
+        self.search_recommendations = tk.Listbox(control_frame, width=30)
+        self.search_recommendations.grid(row=1, column=4, padx=5, pady=2, sticky="w")
+        self.search_recommendations.bind("<<ListboxSelect>>", self.select_search_recommendation)
+        self.search_recommendations.grid_remove()
 
         # Treeview for weapons
         self.tree = ttk.Treeview(self.main_tab, columns=("Weapon", "Status", "Count", "Rarity", "Value"), show="headings")
@@ -154,6 +189,12 @@ class MM2CollectionManager:
         self.next_button = ttk.Button(self.main_tab, text="Next", command=self.next_result)
         self.next_button.pack(side="right", padx=10, pady=5)
 
+    def toggle_filters(self):
+        if self.filter_frame.winfo_ismapped():
+            self.filter_frame.grid_remove()
+        else:
+            self.filter_frame.grid()
+
     def clear_treeview(self):
         self.tree.delete(*self.tree.get_children())
 
@@ -175,13 +216,45 @@ class MM2CollectionManager:
                     tags = ("Chroma",)
                 self.tree.insert("", "end", iid=weapon, values=(weapon, data["Status"], data["Count"], rarity, "NA"), tags=tags)
 
-    def search_weapons(self, event=None):
+    def update_search_recommendations(self, event):
         search_term = self.search_var.get().lower()
+        self.search_recommendations.delete(0, tk.END)
+        if search_term:
+            for category in weapons:
+                for subcategory in weapons[category]:
+                    for weapon in weapons[category][subcategory]:
+                        if search_term in weapon.lower():
+                            self.search_recommendations.insert(tk.END, weapon)
+            self.search_recommendations.grid()
+        else:
+            self.search_recommendations.grid_remove()
+
+    def select_search_recommendation(self, event):
+        if self.search_recommendations.curselection():
+            selected_item = self.search_recommendations.get(self.search_recommendations.curselection())
+            self.search_entry.delete(0, tk.END)
+            self.search_entry.insert(0, selected_item)
+            self.search_recommendations.grid_remove()
+            self.search_weapons()
+
+    def search_weapons(self, event=None):
+        self.search_recommendations.grid_remove()
+        search_term = self.search_var.get().lower()
+        selected_rarities = [rarity for rarity, var in self.rarity_vars.items() if var.get()]
+        selected_types = [weapon_type for weapon_type, var in self.type_vars.items() if var.get()]
+        selected_statuses = [status for status, var in self.status_vars.items() if var.get()]
+
         self.search_results = []
         for category in weapons:
             for subcategory in weapons[category]:
                 for weapon, data in weapons[category][subcategory].items():
                     if search_term in weapon.lower():
+                        if selected_rarities and data["Rarity"] not in selected_rarities:
+                            continue
+                        if selected_types and subcategory.lower() not in [t.lower() for t in selected_types]:
+                            continue
+                        if selected_statuses and data["Status"] not in selected_statuses:
+                            continue
                         self.search_results.append((category, subcategory, weapon))
         self.current_result_index = -1
         self.next_result()
