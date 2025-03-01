@@ -209,6 +209,52 @@ weapons = {
             }
         }
     },
+    "Crafting": {
+        "Uncommon": {
+            "Knife": {
+                "Donut": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                "Checker": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                "Future": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"}
+            },
+            "Gun": {
+                "Love": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"},
+                "Night": {"Status": "Not Collected", "Count": 0, "Rarity": "Uncommon"}
+            }
+        },
+        "Rare": {
+            "Knife": {
+                "Molten": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                "Damp": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                "Nether": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"}
+            },
+            "Gun": {
+                "Molten": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"},
+                "Spitfire": {"Status": "Not Collected", "Count": 0, "Rarity": "Rare"}
+            }
+        },
+        "Legendary": {
+            "Knife": {
+                "Midnight": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                "Emerald": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                "Predator": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"}
+            },
+            "Gun": {
+                "Overseer": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"},
+                "Sparkle": {"Status": "Not Collected", "Count": 0, "Rarity": "Legendary"}
+            }
+        },
+        "Godly": {
+            "Knife": {
+                "Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                "Red Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                "Yellow Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                "Purple Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                "Blue Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                "Orange Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Godly"},
+                "Chroma Seer": {"Status": "Not Collected", "Count": 0, "Rarity": "Chroma"}
+            }
+        }
+    },
     "Events": {
         "Christmas Event 2015": {
             "Knife": {
