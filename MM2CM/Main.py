@@ -65,6 +65,8 @@ class MM2CollectionManager:
         self.style = ttk.Style()
         self.style.theme_use("clam")
 
+        self.dark_mode = tk.BooleanVar(value=False)
+
         self.tree = None 
         self.chroma = True
         self.search_results = []
@@ -209,12 +211,20 @@ class MM2CollectionManager:
         category = self.category_var.get()
         subcategory = self.subcategory_var.get()
         if category in weapons and subcategory in weapons[category]:
-            for weapon, data in weapons[category][subcategory].items():
+            items = []
+            for sub_subcategory in weapons[category][subcategory]:
+                for weapon, data in weapons[category][subcategory][sub_subcategory].items():
+                    items.append((weapon, data))
+            
+            # Sort items by rarity
+            items.sort(key=lambda x: list(RARITY_COLOURS.keys()).index(x[1]["Rarity"]))
+
+            for index, (weapon, data) in enumerate(items):
                 rarity = data["Rarity"]
                 tags = (rarity,)
                 if rarity.lower() == "chroma":
                     tags = ("Chroma",)
-                self.tree.insert("", "end", iid=weapon, values=(weapon, data["Status"], data["Count"], rarity, "NA"), tags=tags)
+                self.tree.insert("", "end", iid=f"{weapon}_{index}", values=(weapon, data["Status"], data["Count"], rarity, "NA"), tags=tags)
 
     def update_search_recommendations(self, event):
         search_term = self.search_var.get().lower()
@@ -222,9 +232,10 @@ class MM2CollectionManager:
         if search_term:
             for category in weapons:
                 for subcategory in weapons[category]:
-                    for weapon in weapons[category][subcategory]:
-                        if search_term in weapon.lower():
-                            self.search_recommendations.insert(tk.END, weapon)
+                    for sub_subcategory in weapons[category][subcategory]:
+                        for weapon in weapons[category][subcategory][sub_subcategory]:
+                            if search_term in weapon.lower():
+                                self.search_recommendations.insert(tk.END, weapon)
             self.search_recommendations.grid()
         else:
             self.search_recommendations.grid_remove()
@@ -241,23 +252,25 @@ class MM2CollectionManager:
         self.search_recommendations.grid_remove()
         search_term = self.search_var.get().lower()
         selected_rarities = [rarity for rarity, var in self.rarity_vars.items() if var.get()]
-        selected_types = [weapon_type for weapon_type, var in self.type_vars.items() if var.get()]
+        selected_types = [weapon_type.lower() for weapon_type, var in self.type_vars.items() if var.get()]
         selected_statuses = [status for status, var in self.status_vars.items() if var.get()]
 
         self.search_results = []
         for category in weapons:
             for subcategory in weapons[category]:
-                for weapon, data in weapons[category][subcategory].items():
-                    if search_term in weapon.lower():
-                        if selected_rarities and data["Rarity"] not in selected_rarities:
-                            continue
-                        if selected_types and subcategory.lower() not in [t.lower() for t in selected_types]:
-                            continue
-                        if selected_statuses and data["Status"] not in selected_statuses:
-                            continue
-                        self.search_results.append((category, subcategory, weapon))
+                for sub_subcategory in weapons[category][subcategory]:
+                    for weapon, data in weapons[category][subcategory][sub_subcategory].items():
+                        if search_term in weapon.lower():
+                            if selected_rarities and data["Rarity"] not in selected_rarities:
+                                continue
+                            if selected_types and sub_subcategory.lower() not in selected_types:
+                                continue
+                            if selected_statuses and data["Status"] not in selected_statuses:
+                                continue
+                            self.search_results.append((category, subcategory, sub_subcategory, weapon))
         self.current_result_index = -1
         self.next_result()
+        self.search_entry.delete(0, tk.END)  # Reset the search bar
 
     def previous_result(self):
         if self.search_results:
@@ -271,7 +284,7 @@ class MM2CollectionManager:
 
     def select_search_result(self):
         if self.search_results:
-            category, subcategory, weapon = self.search_results[self.current_result_index]
+            category, subcategory, sub_subcategory, weapon = self.search_results[self.current_result_index]
             self.category_var.set(category)
             self.update_subcategories(None)
             self.subcategory_var.set(subcategory)
@@ -289,42 +302,57 @@ class MM2CollectionManager:
             weapon_name = self.tree.item(selected_item, "values")[0]
             for category in weapons:
                 for subcategory in weapons[category]:
-                    if weapon_name in weapons[category][subcategory]:
-                        current_status = weapons[category][subcategory][weapon_name]["Status"]
-                        new_status = "Collected" if current_status != "Collected" else "Not Collected"
-                        self.tree.set(selected_item, "Status", new_status)
-                        weapons[category][subcategory][weapon_name]["Status"] = new_status
-                        save_data()
-                        break
+                    for sub_subcategory in weapons[category][subcategory]:
+                        if weapon_name in weapons[category][subcategory][sub_subcategory]:
+                            current_status = weapons[category][subcategory][sub_subcategory][weapon_name]["Status"]
+                            new_status = "Collected" if current_status != "Collected" else "Not Collected"
+                            self.tree.set(selected_item, "Status", new_status)
+                            weapons[category][subcategory][sub_subcategory][weapon_name]["Status"] = new_status
+                            save_data()
+                            break
 
     def update_count(self):
         selected_item = self.tree.selection()
         if selected_item:
+            selected_item = selected_item[0]
+
             try:
                 new_count = int(self.count_var.get())
-                if new_count >= 0:
-                    self.tree.set(selected_item, "Count", new_count)
-                    weapon_name = self.tree.item(selected_item, "values")[0]
-                    for category in weapons:
-                        for subcategory in weapons[category]:
-                            if weapon_name in weapons[category][subcategory]:
-                                weapons[category][subcategory][weapon_name]["Count"] = new_count
-                                save_data()
-                                break
-                else:
+                if new_count < 0:
                     messagebox.showerror("Invalid Count", "Count must be 0 or greater.")
+                    return
+
+                item_values = self.tree.item(selected_item, "values")
+                if not item_values:
+                    messagebox.showerror("Selection Error", "Could not retrieve item values.")
+                    return
+
+                weapon_name = item_values[0]
+
+                for category in weapons:
+                    for subcategory in weapons[category]:
+                        for sub_subcategory in weapons[category][subcategory]:
+                            if weapon_name in weapons[category][subcategory][sub_subcategory]:
+                                weapons[category][subcategory][sub_subcategory][weapon_name]["Count"] = new_count
+                                self.tree.set(selected_item, "Count", new_count)
+                                save_data()
+                                return
+
+                messagebox.showerror("Weapon Not Found", f"Could not find {weapon_name} in weapon data.")
             except ValueError:
                 messagebox.showerror("Invalid Input", "Please enter a valid number for the count.")
+
 
     def populate_tree(self):
         for category in weapons:
             for subcategory in weapons[category]:
-                for weapon, data in weapons[category][subcategory].items():
-                    rarity = data["Rarity"]
-                    tags = (rarity,)
-                    if rarity.lower() == "chroma":
-                        tags = ("Chroma",)
-                    self.tree.insert("", "end", iid=weapon, values=(weapon, data["Status"], data["Count"], rarity, "NA"), tags=tags)
+                for sub_subcategory in weapons[category][subcategory]:
+                    for weapon, data in weapons[category][subcategory][sub_subcategory].items():
+                        rarity = data["Rarity"]
+                        tags = (rarity,)
+                        if rarity.lower() == "chroma":
+                            tags = ("Chroma",)
+                        self.tree.insert("", "end", iid=weapon, values=(weapon, data["Status"], data["Count"], rarity, "NA"), tags=tags)
 
     # Trading Tracker Tab
     def setup_trading_tracker_tab(self):
@@ -373,9 +401,10 @@ class MM2CollectionManager:
         if search_term:
             for category in weapons:
                 for subcategory in weapons[category]:
-                    for weapon in weapons[category][subcategory]:
-                        if search_term in weapon.lower():
-                            self.added_recommendations.insert(tk.END, weapon)
+                    for sub_subcategory in weapons[category][subcategory]:
+                        for weapon in weapons[category][subcategory][sub_subcategory]:
+                            if search_term in weapon.lower():
+                                self.added_recommendations.insert(tk.END, weapon)
             self.added_recommendations.grid()
         else:
             self.added_recommendations.grid_remove()
@@ -393,9 +422,10 @@ class MM2CollectionManager:
         if search_term:
             for category in weapons:
                 for subcategory in weapons[category]:
-                    for weapon in weapons[category][subcategory]:
-                        if search_term in weapon.lower():
-                            self.received_recommendations.insert(tk.END, weapon)
+                    for sub_subcategory in weapons[category][subcategory]:
+                        for weapon in weapons[category][subcategory][sub_subcategory]:
+                            if search_term in weapon.lower():
+                                self.received_recommendations.insert(tk.END, weapon)
             self.received_recommendations.grid()
         else:
             self.received_recommendations.grid_remove()
@@ -424,8 +454,9 @@ class MM2CollectionManager:
     def get_rarity_tag(self, item):
         for category in weapons:
             for subcategory in weapons[category]:
-                if item in weapons[category][subcategory]:
-                    return weapons[category][subcategory][item]["Rarity"]
+                for sub_subcategory in weapons[category][subcategory]:
+                    if item in weapons[category][subcategory][sub_subcategory]:
+                        return weapons[category][subcategory][sub_subcategory][item]["Rarity"]
         return ""
 
     def format_items(self, items):
@@ -491,7 +522,63 @@ class MM2CollectionManager:
 
     # Settings Tab
     def setup_settings_tab(self):
-        ttk.Label(self.settings_tab, text="Placeholder", font=("Arial", 14)).pack(pady=20)
+        settings_notebook = ttk.Notebook(self.settings_tab)
+        settings_notebook.pack(fill="both", expand=True)
+
+        # General settings tab
+        general_settings_tab = ttk.Frame(settings_notebook)
+        settings_notebook.add(general_settings_tab, text="General")
+
+        ttk.Label(general_settings_tab, text="General Settings", font=("Arial", 14)).pack(pady=20)
+        ttk.Label(general_settings_tab, text="Placeholder for general settings").pack(pady=10)
+
+        # Appearance settings tab
+        appearance_settings_tab = ttk.Frame(settings_notebook)
+        settings_notebook.add(appearance_settings_tab, text="Appearance")
+
+        ttk.Label(appearance_settings_tab, text="Appearance Settings", font=("Arial", 14)).pack(pady=20)
+        ttk.Label(appearance_settings_tab, text="Placeholder for appearance settings").pack(pady=10)
+
+        # Dark mode toggle
+        self.dark_mode_checkbutton = ttk.Checkbutton(appearance_settings_tab, text="Dark Mode", variable=self.dark_mode, command=self.toggle_dark_mode)
+        self.dark_mode_checkbutton.pack(pady=10)
+
+        # Advanced settings tab
+        advanced_settings_tab = ttk.Frame(settings_notebook)
+        settings_notebook.add(advanced_settings_tab, text="Advanced")
+
+        ttk.Label(advanced_settings_tab, text="Advanced Settings", font=("Arial", 14)).pack(pady=20)
+        ttk.Label(advanced_settings_tab, text="Placeholder for advanced settings").pack(pady=10)
+
+    def toggle_dark_mode(self):
+        if self.dark_mode.get():
+            self.style.theme_use("alt")
+            self.style.configure("TFrame", background="#2e2e2e")
+            self.style.configure("TLabel", background="#2e2e2e", foreground="white")
+            self.style.configure("TButton", background="#2e2e2e", foreground="white")
+            self.style.configure("TCheckbutton", background="#2e2e2e", foreground="white")
+            self.style.configure("TEntry", fieldbackground="#2e2e2e", foreground="white")
+            self.style.configure("TCombobox", fieldbackground="#2e2e2e", foreground="white")
+            self.style.configure("Treeview", background="#2e2e2e", foreground="white", fieldbackground="#2e2e2e")
+            self.style.configure("TNotebook", background="#2e2e2e")
+            self.style.configure("TNotebook.Tab", background="#2e2e2e", foreground="white")
+            self.root.configure(bg="#2e2e2e")
+            self.root.option_add("*TNotebook*Tab*background", "#2e2e2e")
+            self.root.option_add("*TNotebook*Tab*foreground", "white")
+        else:
+            self.style.theme_use("clam")
+            self.style.configure("TFrame", background="SystemButtonFace")
+            self.style.configure("TLabel", background="SystemButtonFace", foreground="black")
+            self.style.configure("TButton", background="SystemButtonFace", foreground="black")
+            self.style.configure("TCheckbutton", background="SystemButtonFace", foreground="black")
+            self.style.configure("TEntry", fieldbackground="white", foreground="black")
+            self.style.configure("TCombobox", fieldbackground="white", foreground="black")
+            self.style.configure("Treeview", background="white", foreground="black", fieldbackground="white")
+            self.style.configure("TNotebook", background="SystemButtonFace")
+            self.style.configure("TNotebook.Tab", background="SystemButtonFace", foreground="black")
+            self.root.configure(bg="SystemButtonFace")
+            self.root.option_add("*TNotebook*Tab*background", "SystemButtonFace")
+            self.root.option_add("*TNotebook*Tab*foreground", "black")
 
     def animate_chroma(self, index=0):
         """Animate Chroma text color cycling through CHROMA_COLOURS."""
