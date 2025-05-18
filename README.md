@@ -21,34 +21,35 @@ You can toggle the Status of an item with the click of a button; Uncollected / C
 You can enter the count of an item easily, by changing the value inside the box and clicking enter
 ### Color Co-ordination
 All items are color co-ordinated, making it easy to tell what rarity it is!
-## Auto Scanning
+
+### Everything past this point is experimental (E) and/or a Work in progress (WIP)
+
+## Auto Scanning (WIP)
 Enable a setting to allow auto scanning, This setting will scan your MM2 inventory and automatically add the items into the tracker for you.
 Dont worry this isnt needed, its just for the ease of it.
 There are 2 options you can take with this; 
 RealTime - You enable auto scan and open your Inventory on MM2, it will monitor your screen and with image recognition, add the items to the collection - Alternatively you can use
 ScreenShots - Take screenshots of your inventory and input them into the auto scan, this will do the same as option 1 and add the items to the collection
 
-
-
-# Tracker
+# Trading Tracker (E)
 Input the items you gave and recieved into the respective boxes and click the button to add the trade to the tracker
-The tracker is saved to .JSON file so any time you open the script (ASLONG AS U DONT DELETE THE .JSON) will be saved and loaded
-### W/F/L
+The tracker is saved to .JSON file so any time you open the script (ASLONG AS U DONT DELETE THE .JSON) they will be saved and loaded
+### W/F/L (WIP)
 The tracker displays if a trade is a WIN, FAIR, or LOSS, based on the estimated values of the weapons
-### Selecting Trade
+### Selecting Trade (E)
 Select a trade in the tracker to delete it, or for more information about the trade
 You can input the information yourself, like any notes about the trade, the other traders username, etc
-### Auto Scanning
+### Trade Scanning (WIP)
 Just like with the collection manager you can automatically scan your trades into the trading tracker.
 
-# Settings
+# Settings (E)
 Nothing special, Just a settings tab
 
-### Visual Settings
+### Visual Settings (WIP)
 NOT FINISHED
-### Customisation Settings
+### Customisation Settings (WIP)
 NOT FINISHED
-### General Settings
+### General Settings (WIP)
 Auto Scanning (Collection) - RealTime / ScreenShots | 
 Auto Scanning (Trading) - RealTime / ScreenShots
 
